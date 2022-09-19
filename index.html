@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Pasahelp</title>
+    <!--  <link rel="icon" href="img/icon.png"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Mapbox -->
+    <link href="mapbox/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="mapbox/mapbox-gl-directions.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="modal">
+        <div class="modalBody">
+            <div class="hole"></div>
+            <div class="modalTitle">PASAHELP</div>
+            <div class="modalDescription">Mega Manila Jeepney Fare Calculator</div>
+        </div>
+    </div>
+    <div class="mapContainer">
+    <div class="" id="map">
+        <div class="location"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="container">
+            <div class=" kilometerLabel">Kilometer
+                <div class="kilometer">00 KM</div>
+            </div>
+            <div class=" normalFareLabel">Regular Fare
+                <div class="normalFare">00.00 PHP</div>
+            </div>
+            <div class=" discountedFareLabel">Discounted Fare
+                <div class="discountedFare">00.00 PHP</div>
+                <div class="discountedNote">for Elderly/Student/PWD</div>
+            </div>
+            <div class="close"><i class="fas fa-times"></i></div>
+        </div>
+    </div>
+
+    <script src="mapbox/mapbox-gl.js"></script>
+    <script src="mapbox/mapbox-gl-directions.js"></script>
+
+    <script src="js/script.js" defer></script>
+    
+</body>
+
+</html>

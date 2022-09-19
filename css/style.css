@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.mapContainer {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+#map {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    margin-top: 500px;
+    margin-bottom: 50px;
+    display: none;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    bottom: 1vh;
+    left: 15%;
+    width: 70%;
+    height: 10vw;
+    line-height: .9;
+    animation-name: animationUp;
+    animation-duration: 0.5s;
+    color: #454952;
+    box-shadow: 0px 0px 10px rgba(209, 209, 209, 0.5);
+    font-weight: 700;
+}
+
+@media (max-height: 576px) {
+    .mapContainer {
+        min-height: 580px;
+    }
+
+    #map {
+        min-height: 580px;
+    }
+}
+
+.discountedNote {
+    font-size: .7vw;
+}
+
+.mobileClose {
+    display: none;
+}
+
+.kilometerLabel,
+.normalFareLabel,
+.discountedFareLabel {
+    padding: 0px 2vw;
+    font-size: 1.2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.kilometer,
+.normalFare,
+.discountedFare {
+    font-size: 3.5vw;
+}
+
+.discountedFareLabel {
+    padding-top: .4vw;
+}
+
+.kilometerLabel {
+    background-color: #003C6F;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    margin: 0 2.1vw;
+}
+
+.normalFareLabel,
+.discountedFareLabel {
+    margin: 0 0 0 1.1vw;
+}
+
+.directions-icon-reverse,
+.directions-reverse,
+.mapboxgl-ctrl-attrib-inner,
+.mapbox-directions-profile,
+.mapboxgl-ctrl-icon {
+    display: none;
+}
+
+.onClose {
+    animation-name: animationDown;
+    animation-duration: 0.5s;
+    transform: translateY(150%);
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 19px;
+}
+
+.mapbox-directions-origin input {
+    border-radius: 0px 10px 0px 0px;
+}
+
+.mapbox-directions-destination input {
+    border-radius: 0px 0px 10px 0px;
+}
+
+.mapboxgl-ctrl-geocoder input {
+    background-color: #f0f0f0 !important;
+    border: solid 0px white !important;
+    font-size: 14px !important;
+    font-family: 'Poppins', sans-serif;
+    height: 35px !important;
+}
+
+.geocoder-pin-right button,
+.geocoder-pin-right span {
+    margin-top: -3px;
+}
+
+.geocoder-pin-right button:hover {
+    background-color: transparent !important;
+}
+
+.mapboxgl-ctrl-geocoder ul {
+    font-size: 14px !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mapbox-directions-destination {
+    margin-top: 3px;
+}
+
+.mapboxgl-ctrl-geolocate {
+    background: #1A3B70 !important;
+    top: 100;
+    position: relative;
+    margin-top: -87px;
+    margin-left: 20px;
+}
+
+.location {
+    position: absolute;
+    z-index: 9;
+    font-size: 17px;
+    margin-top: 62px;
+    margin-left: 40px;
+    color: white;
+}
+
+.mapbox-directions-component-keyline {
+    background-color: white;
+    border-radius: 10px;
+    padding: 7px 13px 7px 30px;
+    position: relative;
+    margin-left: -15px;
+    box-shadow: 0px 0px 10px rgba(209, 209, 209, 0.5);
+}
+
+
+.mapbox-directions-destination .mapbox-form-label,
+.mapbox-directions-origin .mapbox-form-label {
+    height: 35px !important;
+}
+
+@keyframes animationUp {
+    from {
+        transform: translateY(150%);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1
+    }
+}
+
+@keyframes animationDown {
+    from {
+        transform: translateY(0%);
+        opacity: 1
+    }
+
+    to {
+        transform: translateY(150%);
+        opacity: 0
+    }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .container {
+        left: 6%;
+        width: 88%;
+        height: 14vw;
+        line-height: 1;
+    }
+
+    .discountedNote {
+        font-size: .8vw;
+    }
+
+    .kilometerLabel,
+    .normalFareLabel,
+    .discountedFareLabel {
+        font-size: 2vw;
+    }
+
+    .discountedFareLabel {
+        padding-top: .4vw;
+    }
+
+    .kilometer,
+    .normalFare,
+    .discountedFare {
+        font-size: 5vw;
+    }
+
+    .discountedNote {
+        line-height: .5;
+        font-size: 1.2vw;
+    }
+
+    .close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 17px;
+    }
+
+    @media (max-height: 576px) {
+        .container {
+            margin-bottom: 5vw;
+        }
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        height: 20vw !important;
+        bottom: 0px;
+        left: 0;
+        bottom: 0;
+        justify-content: center;
+        position: absolute;
+        border-radius: 20px 20px 0px 0px;
+        margin-top: 0px;
+        margin-bottom: 0px !important;
+    }
+
+    /* @media (max-height: 576px) {
+        .mapContainer {
+           min-height: 600px;
+        }
+        #map {
+            min-height: 600px;
+        }
+    }  */
+
+    .kilometerLabel {
+        display: none;
+        color: #454952;
+        background-color: white;
+    }
+
+    .normalFareLabel {
+        background-color: #003C6F;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+    }
+
+    .normalFareLabel,
+    .discountedFareLabel {
+        padding: 0px 3vw;
+    }
+
+    .discountedNote {
+        font-size: 1.4vw;
+    }
+
+    .close {
+        font-size: 16px;
+        right: 15px;
+        top: 10px;
+    }
+
+    .kilometerLabel,
+    .normalFareLabel,
+    .discountedFareLabel {
+        font-size: 2.5vw;
+    }
+
+    .kilometer,
+    .normalFare,
+    .discountedFare {
+        font-size: 7.3vw;
+    }
+
+    .discountedFareLabel {
+        padding-top: 1vw;
+    }
+
+    .mapboxgl-ctrl-group .mapboxgl-ctrl-zoom-in,
+    .mapboxgl-ctrl-group .mapboxgl-ctrl-zoom-out {
+        display: none;
+    }
+}
+
+/* @media (max-width: 300px) {
+.container {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    height: 400px;
+}
+.kilometerLabel,.normalFareLabel.discountedFareLabel {
+    width: 100%!important;
+    padding: 100px;
+}
+}
+ */
+
+/* Modal */
+        .modal {
+            width: 100%;
+            height: 100%;
+            background-color: #D2D5D5;
+            /* background-color: white; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modalBody {
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+        }
+
+        .modalTitle {
+            font-size: 100px;
+            letter-spacing: -3px;
+            padding: 10px 20px 0 15px;
+            color: #003C6F;
+            line-height: .65;
+        }
+
+        .modalDescription {
+            background-color: #003C6F;
+            color: #f0f0f0;
+            padding: 5px 0 20px 0;
+            font-size: 15px;
+        }
+
+        .modalClose {
+            position: absolute;
+            right: 8px;
+            font-size: 17px;
+        }
+
+        .hole {
+            width: 12px;
+            height: 12px;
+            border-radius: 100px;
+            background-color: #003C6F;
+            margin: 8px auto 0 auto;
+        }
+
+        @media (max-width: 576px) {
+            .modalTitle {
+                font-size: 18vw;
+            }
+
+            .modalDescription {
+                font-size: 3vw;
+            }
+
+            .hole {
+                width: 2.7vw;
+                height: 2.7vw;
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
